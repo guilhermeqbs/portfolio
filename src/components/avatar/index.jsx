@@ -5,7 +5,7 @@ function Avatar() {
         <img 
             src={srcAvatar}
             alt="Avatar" 
-            className="transition hover:translate-y-1 hover:scale-105 rounded-full border-2 border-gray-200 shadow-lg w-48 h-48"
+            className="transition hover:translate-t-1 hover:scale-105 rounded-full border-2 border-secondary shadow-lg w-50 h-50"
         />
     );
 }

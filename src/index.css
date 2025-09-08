@@ -1,3 +1,63 @@
 @import "tailwindcss";
 
+/* Suas cores customizadas */
+@theme {
+  --color-primary: #FFFFF0;
+  --color-secondary: #181C14;
+  --font-family-figtree: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-family-caprasimo: "Caprasimo", cursive;
+  --font-family-teko: "Teko", sans-serif;
+}
 
+/* Aplicação direta das fontes como backup */
+.font-figtree {
+  font-family: "Figtree", ui-sans-serif, system-ui, sans-serif !important;
+}
+
+
+.font-caprasimo {
+  font-family: "Caprasimo", cursive !important;
+}
+
+.bg-texture {
+  background-color: #fffff0;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%233e2723' fill-opacity='0.3' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+/* ...existing code... */
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+  border-radius: 12px;
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* brilho superior (reflexo) */
+.glass::before {
+  content: "";
+  position: absolute;
+  left: -20%;
+  top: -50%;
+  width: 140%;
+  height: 60%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0));
+  transform: rotate(-12deg);
+  pointer-events: none;
+  opacity: 0.6;
+  filter: blur(10px);
+}
+
+/* ruído / grain sutil para realismo */
+.glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><rect width='40' height='40' fill='rgba(0,0,0,0)'/><circle cx='2' cy='2' r='0.6' fill='%23000000' fill-opacity='0.03'/></svg>");
+  background-repeat: repeat;
+  opacity: 0.6;
+  mix-blend-mode: overlay;
+}
