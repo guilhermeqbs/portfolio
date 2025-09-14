@@ -3,12 +3,16 @@ function About() {
         <div className="w-[50%] h-full flex flex-col items-center justify-center p-4 space-y-16">
             <h2 className="text-4xl font-semibold">Sobre Mim</h2>
             <div className="space-y-8">
-                <p className="text-2xl">Desenvolvedor full stack iniciando profissionalmente em 2021, especializado em sistemas governamentais
-                    críticos que atendem milhares de usuários. Combino habilidades técnicas sólidas com comunicação eficaz
-                    para entregar soluções alinhadas ao negócio. </p>
-                <p className="text-2xl">Busco constantemente aprimoramento técnico e profissional,
-                    explorando novas tecnologias e assumindo desafios que ampliem minha experiência. Motivado pelo impacto
-                    transformador que a tecnologia pode gerar na vida das pessoas</p>
+                <p className="text-2xl">
+                    Desenvolvedor Full Stack iniciando em 2021, especializado em sistemas 
+                    de alta performance que impactam milhares de usuários diariamente. Combino expertise técnica 
+                    em tecnologias modernas com visão estratégica de negócio para entregar soluções robustas e escaláveis.
+                </p>
+                <p className="text-2xl">
+                    Apaixonado por inovação e aprendizado contínuo, estou sempre explorando novas tecnologias e 
+                    metodologias para elevar a qualidade dos projetos. Acredito no poder transformador da tecnologia 
+                    e busco criar experiências digitais que façam a diferença na vida das pessoas.
+                </p>
             </div>
         </div>
     );
