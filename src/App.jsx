@@ -21,10 +21,10 @@ function App() {
         <Description />
       </section>
       
-      <section id="about" className='flex flex-col items-center min-h-screen w-full pt-20
+      <section id="about" className='flex flex-col items-center min-h-screen w-full pt-20 
       '>
         <About />
-         <Skills />
+         
       </section>
       
       <section id="career" className='flex flex-col items-center min-h-screen w-full pt-20'>
@@ -32,7 +32,7 @@ function App() {
         <Education />
       </section>
       
-      <section id="skills" className='flex flex-col items-center min-h-screen w-full pt-20'>
+      <section id="skills" className='min-h-screen w-full pt-20'>
         <Skills />
       </section>
       
