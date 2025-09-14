@@ -50,41 +50,112 @@ const skillsGroups = {
 function Skills() {
   return (
     <div className="w-full h-full flex flex-col items-center justify-center p-4">
-      <h2 className="text-2xl font-bold mb-8">Minhas Habilidades</h2>
+      <h2 className="text-4xl font-semibold mb-8">Minhas Habilidades</h2>
 
       <div className="w-full max-w-6xl space-y-8">
-        {Object.entries(skillsGroups).map(([groupName, skills]) => (
-          <div key={groupName} className="space-y-4">
-            <h3 className="text-xl font-semibold text-center">{groupName}</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {skills.map(({ id, Icon, label, percent, color }) => (
-                <div key={id} className="flex items-center gap-4 group p-3 rounded-lg bg-primary/3 transition">
-                  <div className="flex flex-col items-center justify-center w-20">
-                    <Icon className="w-10 h-10"
-                      style={{ color: color }}
-                    />
-                    <span className="text-xs mt-2 text-center">{label}</span>
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {Object.entries(skillsGroups).slice(0, 2).map(([groupName, skills]) => (
+            <div key={groupName} className="space-y-4">
+              <h3 className="text-xl font-semibold text-center">{groupName}</h3>
+              <div className="flex flex-col w-full">
+                {skills.map(({ id, Icon, label, percent, color }) => (
+                  <div key={id} className="flex items-center gap-4 group p-3 rounded-lg bg-primary/3 transition">
+                    <div className="flex flex-col items-center justify-center w-20">
+                      <Icon className="w-10 h-10 hover:scale-110 transition"
+                        style={{ color: color }}
+                      />
+                      <span className="text-xs mt-2 text-center">{label}</span>
+                    </div>
 
-                  <div className="flex-1">
-                    <div className="w-full rounded-full h-6 bg-secondary/10 overflow-hidden">
-                      <div
-                        className="h-full rounded-full duration-500 flex items-center justify-center text-sm font-medium text-primary"
-                        style={{
-                          width: `${percent}%`,
-                          backgroundSize: '12px 12px',
-                          backgroundColor: `${color}70`
-                        }}
-                      >
-                        {percent}%
+                    <div className="flex-1">
+                      <div className="w-full rounded-full h-6 bg-secondary/10 overflow-hidden">
+                        <div
+                          className="h-full rounded-full duration-500 flex items-center justify-center text-sm font-medium text-primary"
+                          style={{
+                            width: `${percent}%`,
+                            backgroundSize: '12px 12px',
+                            backgroundColor: `${color}70`
+                          }}
+                        >
+                          {percent}%
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {Object.entries(skillsGroups).slice(2, 3).map(([groupName, skills]) => {
+          const half = Math.ceil(skills.length / 2);
+          const firstHalf = skills.slice(0, half);
+          const secondHalf = skills.slice(half);
+          
+          return (
+            <div key={groupName} className="space-y-4">
+              <h3 className="text-xl font-semibold text-center">{groupName}</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="flex flex-col space-y-2">
+                  {firstHalf.map(({ id, Icon, label, percent, color }) => (
+                    <div key={id} className="flex items-center gap-4 group p-3 rounded-lg bg-primary/3 transition">
+                      <div className="flex flex-col items-center justify-center w-20">
+                        <Icon className="w-10 h-10 hover:scale-110 transition"
+                          style={{ color: color }}
+                        />
+                        <span className="text-xs mt-2 text-center">{label}</span>
+                      </div>
+
+                      <div className="flex-1">
+                        <div className="w-full rounded-full h-6 bg-secondary/10 overflow-hidden">
+                          <div
+                            className="h-full rounded-full duration-500 flex items-center justify-center text-sm font-medium text-primary"
+                            style={{
+                              width: `${percent}%`,
+                              backgroundSize: '12px 12px',
+                              backgroundColor: `${color}70`
+                            }}
+                          >
+                            {percent}%
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="flex flex-col space-y-2">
+                  {secondHalf.map(({ id, Icon, label, percent, color }) => (
+                    <div key={id} className="flex items-center gap-4 group p-3 rounded-lg bg-primary/3 transition">
+                      <div className="flex flex-col items-center justify-center w-20">
+                        <Icon className="w-10 h-10 hover:scale-110 transition"
+                          style={{ color: color }}
+                        />
+                        <span className="text-xs mt-2 text-center">{label}</span>
+                      </div>
+
+                      <div className="flex-1">
+                        <div className="w-full rounded-full h-6 bg-secondary/10 overflow-hidden">
+                          <div
+                            className="h-full rounded-full duration-500 flex items-center justify-center text-sm font-medium text-primary"
+                            style={{
+                              width: `${percent}%`,
+                              backgroundSize: '12px 12px',
+                              backgroundColor: `${color}70`
+                            }}
+                          >
+                            {percent}%
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   )
