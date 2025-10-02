@@ -10,7 +10,7 @@ function Projects() {
                     <div className="w-full h-40 bg-secondary/10 rounded border border-secondary/20 flex items-center justify-center">
                         <img className="w-full h-full object-cover" src={srcScreenShot} alt="Screenshot do projeto Encurtador de Link" />
                     </div>
-                    <p className="text-center">Um encurtador de link desenvolvido com MERN,  e Tailwind CSS. Aplicando conceitos de API RESTful e autenticação JWT.</p>
+                    <p className="text-justify">Um encurtador de link desenvolvido com MERN,  e Tailwind CSS. Aplicando conceitos de API RESTful e autenticação JWT.</p>
                     <div className="flex flex-wrap gap-2 justify-center">
                         <span className="px-3 py-1 bg-secondary/10 rounded border border-secondary/20 text-sm">MongoDB</span>
                         <span className="px-3 py-1 bg-secondary/10 rounded border border-secondary/20 text-sm">Express</span>
@@ -18,6 +18,16 @@ function Projects() {
                         <span className="px-3 py-1 bg-secondary/10 rounded border border-secondary/20 text-sm">Node.js</span>
                         <span className="px-3 py-1 bg-secondary/10 rounded border border-secondary/20 text-sm">Tailwind</span>
                         <span className="px-3 py-1 bg-secondary/10 rounded border border-secondary/20 text-sm">Vite</span>
+                    </div>
+                    <div className="flex gap-4">
+                        <a 
+                            href="https://shortlink-gb.vercel.app/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-secondary text-primary rounded font-medium hover:bg-secondary/80 transition"
+                        >
+                            Ver Projeto
+                        </a>
                     </div>
                 </div>
             </div>
